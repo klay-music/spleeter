@@ -90,6 +90,10 @@ class GithubModelProvider(ModelProvider):
             environ.get("GITHUB_RELEASE", cls.LATEST_RELEASE),
         )
 
+    @classmethod
+    def from_default(cls: type) -> "GithubModelProvider":
+        return cls(cls.DEFAULT_HOST, cls.DEFAULT_REPOSITORY, cls.LATEST_RELEASE)
+
     def checksum(self, name: str) -> str:
         """
         Downloads and returns reference checksum for the given model name.

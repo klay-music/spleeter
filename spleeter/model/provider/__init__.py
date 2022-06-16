@@ -92,4 +92,4 @@ class ModelProvider(ABC):
         """
         from .github import GithubModelProvider
 
-        return GithubModelProvider.from_environ()
+        return GithubModelProvider.from_default()
